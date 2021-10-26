@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/pixi.min.js"></script>
+    <script>
+		var app = new PIXI.Application(900,600);
+        document.body.appendChild(app.view);
+        
+        var bg = new PIXI.Sprite.fromImage("res/gress.png");
+        app.stage.addChild(bg);
+		
+		const bjy = new Audio("music/wind.acc");
+		bjy.play();
+		
+		var sun = new PIXI.Sprite.fromImage("res/sun.png");
+		app.stage.addChild(sun);
+		sun.x = 180 ;
+		sun.y = 205 ;
+		sun.scale.x = 2;
+		sun.scale.y = 2;
+		
+		sun.interactive = true;
+		sun.on("mouseover",dj1);
+		function dj1(){
+			sun.scale.x = 3;
+			sun.scale.y = 3;
+		}
+		
+		sun.on("mouseout",qx1);
+		function qx1(){
+			sun.scale.x = 2;
+			sun.scale.y = 2;
+		}
+		
+		var ty = new PIXI.Text("太阳，SUN");
+		app.stage.addChild(ty);
+		ty.x=sun.x;
+		ty.y=sun.y+5;
+		ty.visible = false;
+		
+		sun.on("click",move1);
+		function move1() {
+				ty.visible = true;
+				bd.visible = false;
+				nn.visible = false;
+				xh.visible = false;
+				xg.visible = false;
+				xs.visible = false;
+		}
+		
+		
+		
+		
+		var xn = new PIXI.Sprite.fromImage("res/bird.png");
+		app.stage.addChild(xn);
+		xn.x = 450 ;
+		xn.y = 100 ;
+		
+		
+		const nj = new Audio("music/bird.aac");
+		nj.pause();
+		
+		xn.interactive = true;
+		xn.on("mouseover",dj2);
+		function dj2(){
+			xn.scale.x = 1.5;
+			xn.scale.y = 1.5;
+			nj.play();
+		}
+		
+		xn.on("mouseout",qx2);
+		function qx2(){
+			xn.scale.x = 1;
+			xn.scale.y = 1;
+			nj.pause();
+		}
+		
+		var bd = new PIXI.Text("小鸟，BIRD");
+		app.stage.addChild(bd);
+		bd.x=xn.x;
+		bd.y=xn.y+5;
+		bd.visible = false;
+		
+		xn.on("click",move2);
+		function move2() {
+				bd.visible = true;
+				ty.visible = false; 
+				nn.visible = false;
+				xh.visible = false;
+				xg.visible = false;
+				xs.visible = false;
+		}
+		
+		
+		
+		var cow = new PIXI.Sprite.fromImage("res/cow.png");
+		app.stage.addChild(cow);
+		cow.x = 750 ;
+		cow.y = 430 ;
+		cow.scale.x = 0.5;
+		cow.scale.y = 0.5;
+		
+		const mm = new Audio("music/cow.acc");
+		mm.pause();
+		
+		cow.interactive = true;
+		cow.on("mouseover",dj3);
+		function dj3(){
+			cow.scale.x = 0.7;
+			cow.scale.y = 0.7;
+			mm.play();
+		}
+		
+		cow.on("mouseout",qx3);
+		function qx3(){
+			cow.scale.x = 0.5;
+			cow.scale.y = 0.5;
+			mm.pause();
+		}
+		
+		var nn = new PIXI.Text("小牛，COW");
+		app.stage.addChild(nn);
+		nn.x=cow.x;
+		nn.y=cow.y+5;
+		nn.visible = false;
+		
+		cow.on("click",move3);
+		function move3() {
+				nn.visible = true;
+				ty.visible = false;
+				bd.visible = false;
+				xh.visible = false;
+				xg.visible = false;
+				xs.visible = false;
+		}
+		
+		
+		
+		var flower = new PIXI.Sprite.fromImage("res/flower.png");
+		app.stage.addChild(flower);
+		flower.x = 300 ;
+		flower.y = 500 ;
+		flower.scale.x = 0.2;
+		flower.scale.y = 0.2;
+		
+		flower.interactive = true;
+		flower.on("mouseover",dj4);
+		function dj4(){
+			flower.scale.x = 0.25;
+			flower.scale.y = 0.25;
+		}
+		
+		flower.on("mouseout",qx4);
+		function qx4(){
+			flower.scale.x = 0.2;
+			flower.scale.y = 0.2;
+		}
+		
+		var xh = new PIXI.Text("花朵，FLOWER");
+		app.stage.addChild(xh);
+		xh.x=flower.x;
+		xh.y=flower.y+5;
+		xh.visible = false;
+		
+		flower.on("click",move4);
+		function move4() {
+				xh.visible = true;
+				ty.visible = false;
+				bd.visible = false;
+				nn.visible = false;
+				xg.visible = false;
+				xs.visible = false;
+		}
+		
+		
+		
+		var dog = new PIXI.Sprite.fromImage("res/dog.png");
+		app.stage.addChild(dog);
+		dog.x = 100 ;
+		dog.y = 500 ;
+		dog.scale.x = 0.3;
+		dog.scale.y = 0.3;
+		
+		const ww = new Audio("music/dog.acc");
+		ww.pause();
+		
+		dog.interactive = true;
+		dog.on("mouseover",dj5);
+		function dj5(){
+			dog.scale.x = 0.5;
+			dog.scale.y = 0.5;
+			ww.play();
+		}
+		
+		dog.on("mouseout",qx5);
+		function qx5(){
+			dog.scale.x = 0.3;
+			dog.scale.y = 0.3;
+			ww.pause();
+		}
+		
+		var xg = new PIXI.Text("小狗，DOG");
+		app.stage.addChild(xg);
+		xg.x=dog.x;
+		xg.y=dog.y+5;
+		xg.visible = false;ty.x
+		
+		dog.on("click",move5);
+		function move5() {
+				xg.visible = true;
+				ty.visible = false;
+				bd.visible = false;
+				nn.visible = false;
+				xh.visible = false;
+				xs.visible = false;
+		}
+		
+		
+		var tree = new PIXI.Sprite.fromImage("res/tree.png");
+		app.stage.addChild(tree);
+		tree.x = 600 ;
+		tree.y = 450 ;
+		tree.scale.x =0.25;
+		tree.scale.y =0.25;
+		tree.interactive = true;
+		tree.on("mouseover",dj6);
+		function dj6(){
+			tree.scale.x = 0.3;
+			tree.scale.y = 0.3;
+		}
+		
+		tree.on("mouseout",qx6);
+		function qx6(){
+			tree.scale.x = 0.25;
+			tree.scale.y = 0.25;
+		}
+		
+		var xs = new PIXI.Text("树，TREE");
+		app.stage.addChild(xs);
+		xs.x=tree.x;
+		xs.y=tree.y+5;
+		xs.visible = false;
+		
+		tree.on("click",move6);
+		function move6() {
+				xs.visible = true;
+				ty.visible = false;
+				bd.visible = false;
+				nn.visible = false;
+				xg.visible = false;
+				xh.visible = false;
+		}
+		
+		
+		
+    </script>
+</body>
+</html>
+
